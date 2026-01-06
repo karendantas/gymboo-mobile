@@ -1,6 +1,7 @@
+import { Theme } from '@/contexts/themeContext';
 import { COLORS } from './colors';
 
-export const softBlueTheme = {
+export const softBlueTheme: Theme = {
   id: 2,
   colors: {
     primary: COLORS.softBlue[300],
@@ -26,5 +27,6 @@ export const softBlueTheme = {
     buttonDark: COLORS.yellow[500],
 
     danger: COLORS.red[500],
+    light: COLORS.neutral[100],
   },
 };

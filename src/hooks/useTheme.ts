@@ -4,7 +4,7 @@ import { useContext } from 'react';
 export function useTheme() {
   const context = useContext(ThemeContext);
   if (!context) {
-    throw new Error('useAuth must be user within an AuthProvider');
+    throw new Error('useTheme must be within an ThemeProvider');
   }
   return context;
 }

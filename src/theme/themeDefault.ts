@@ -26,5 +26,6 @@ export const defaultTheme = {
     buttonDark: COLORS.green[600],
 
     danger: COLORS.red[500],
+    light: COLORS.neutral[100],
   },
 };
