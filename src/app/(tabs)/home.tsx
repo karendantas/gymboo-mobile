@@ -1,5 +1,12 @@
-import { Text } from "react-native";
+import { useTheme } from '@/hooks/useTheme';
+import { Button } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Screen() {
-  return <Text> Home </Text>;
+  const { toggleTheme, theme } = useTheme();
+  return (
+    <SafeAreaView>
+      <Button title="mudar cor" onPress={() => toggleTheme(1)} />
+    </SafeAreaView>
+  );
 }

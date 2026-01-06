@@ -1,16 +1,23 @@
-import { Tabs } from "expo-router";
+import { Tabs } from 'expo-router';
 
-import DropIcon from "@/assets/icons/drop.svg";
-import DumbellIcon from "@/assets/icons/dumbell.svg";
-import HomeIcon from "@/assets/icons/home.svg";
-import PetIcon from "@/assets/icons/pet.svg";
+import DropIcon from '@/assets/icons/drop.svg';
+import DumbellIcon from '@/assets/icons/dumbell.svg';
+import HomeIcon from '@/assets/icons/home.svg';
+import PetIcon from '@/assets/icons/pet.svg';
+import { useTheme } from '@/hooks/useTheme';
 
 export default function TabsLayout() {
+  const { theme } = useTheme();
+
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "pink",
+        tabBarActiveTintColor: theme.colors.primaryDark,
+        tabBarInactiveTintColor: 'white',
         headerShown: false,
+        tabBarStyle: {
+          backgroundColor: theme.colors.primary,
+        },
       }}
     >
       <Tabs.Screen
