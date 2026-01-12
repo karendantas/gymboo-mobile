@@ -1,29 +1,30 @@
-import { defaultTheme } from '@/theme/themeDefault';
-import { softBlueTheme } from '@/theme/themeSoftBlue';
-import { createContext, useMemo, useState } from 'react';
+import { nativewindThemes } from '@/theme/nativewindThemes';
+import { createContext, useState } from 'react';
+import { View } from 'react-native';
 
-type Theme = typeof defaultTheme;
+type ThemeName = keyof typeof nativewindThemes;
+
 interface ThemeContextProps {
-  theme: Theme;
-  toggleTheme: (id: number) => void;
+  theme: ThemeName;
+  setTheme: (theme: ThemeName) => void;
 }
 
-const THEMES: any = {
-  1: defaultTheme,
-  2: softBlueTheme,
-};
+export const ThemeContext = createContext<ThemeContextProps>(
+  {} as ThemeContextProps,
+);
 
-export const ThemeContext = createContext<ThemeContextProps>({} as any);
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(defaultTheme);
-
-  function toggleTheme(id: number) {
-    setTheme(THEMES[id] ?? defaultTheme);
-  }
-
-  const value = useMemo(() => ({ theme, toggleTheme }), [theme]);
+export function ThemeProvider({
+  children,
+  initialTheme = 'default',
+}: {
+  children: React.ReactNode;
+  initialTheme?: ThemeName;
+}) {
+  const [theme, setTheme] = useState<ThemeName>(initialTheme);
 
   return (
-    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      <View style={[{ flex: 1 }, nativewindThemes[theme]]}>{children}</View>
+    </ThemeContext.Provider>
   );
 }

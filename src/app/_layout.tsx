@@ -1,4 +1,5 @@
 import { ThemeProvider } from '@/contexts/themeContext';
+import '@/global.css';
 import { FontAwesome } from '@expo/vector-icons';
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';

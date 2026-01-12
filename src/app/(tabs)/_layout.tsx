@@ -1,22 +1,37 @@
+import { useTheme } from '@/hooks/useTheme';
+import { COLORS } from '@/theme/colors';
 import { Tabs } from 'expo-router';
 
 import DropIcon from '@/assets/icons/drop.svg';
 import DumbellIcon from '@/assets/icons/dumbell.svg';
 import HomeIcon from '@/assets/icons/home.svg';
 import PetIcon from '@/assets/icons/pet.svg';
-import { useTheme } from '@/hooks/useTheme';
 
 export default function TabsLayout() {
   const { theme } = useTheme();
 
+  const themeColors = {
+    default: {
+      active: COLORS.pink[700],
+      inactive: COLORS.neutral[100],
+      background: COLORS.pink[300],
+    },
+    softBlue: {
+      active: COLORS.blue[500],
+      inactive: COLORS.neutral[100],
+      background: COLORS.blue[300],
+    },
+  };
+
+  const currentColors = themeColors[theme];
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: theme.colors.primaryDark,
-        tabBarInactiveTintColor: 'white',
+        tabBarActiveTintColor: currentColors.active,
+        tabBarInactiveTintColor: currentColors.inactive,
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: theme.colors.primary,
+          backgroundColor: currentColors.background,
         },
       }}
     >

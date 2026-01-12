@@ -1,12 +1,34 @@
+import { Button } from '@/components/button';
+
+import P from '@/assets/icons/profile.svg';
+import { Input } from '@/components/input';
 import { useTheme } from '@/hooks/useTheme';
-import { Button } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { View } from 'react-native';
 
 export default function Screen() {
-  const { toggleTheme, theme } = useTheme();
+  const { setTheme, theme } = useTheme();
+
   return (
-    <SafeAreaView>
-      <Button title="mudar cor" onPress={() => toggleTheme(1)} />
-    </SafeAreaView>
+    <View className="mx-5 flex-1 justify-center mt-5 gap-y-3">
+      <Button
+        onPress={() =>
+          theme == 'default' ? setTheme('softBlue') : setTheme('default')
+        }
+      >
+        <Button.Text> Teste </Button.Text>
+        <Button.Icon icon={P} />
+      </Button>
+      <Button
+        variant="secondary"
+        onPress={() =>
+          theme == 'default' ? setTheme('softBlue') : setTheme('default')
+        }
+      >
+        <Button.Icon icon={P} />
+        <Button.Text> Teste </Button.Text>
+      </Button>
+
+      <Input placeholder="Teste" icon={P} />
+    </View>
   );
 }
