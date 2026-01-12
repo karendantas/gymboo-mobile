@@ -1,8 +1,10 @@
 import { ThemeProvider } from '@/contexts/themeContext';
+import '@/global.css';
 import { FontAwesome } from '@expo/vector-icons';
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -33,7 +35,9 @@ export default function RootLayout() {
   }
   return (
     <ThemeProvider>
-      <RootLayoutNav />
+      <SafeAreaProvider>
+        <RootLayoutNav />
+      </SafeAreaProvider>
     </ThemeProvider>
   );
 }
