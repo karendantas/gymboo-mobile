@@ -42,7 +42,7 @@ export default function RootLayout() {
 export function RootLayoutNav() {
   return (
     <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
       <Stack.Screen name="(zShared)" options={{ headerShown: false }} />
     </Stack>
   );
