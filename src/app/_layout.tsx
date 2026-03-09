@@ -1,5 +1,7 @@
+import { AuthProvider } from '@/contexts/authContext';
 import { ThemeProvider } from '@/contexts/themeContext';
 import '@/global.css';
+import { RouteGuard } from '@/Guards/routeGuard';
 import { FontAwesome } from '@expo/vector-icons';
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
@@ -33,9 +35,13 @@ export default function RootLayout() {
     return null;
   }
   return (
-    <ThemeProvider>
-      <RootLayoutNav />
-    </ThemeProvider>
+    <AuthProvider>
+      <RouteGuard>
+        <ThemeProvider>
+          <RootLayoutNav />
+        </ThemeProvider>
+      </RouteGuard>
+    </AuthProvider>
   );
 }
 

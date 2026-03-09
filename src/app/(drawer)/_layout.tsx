@@ -38,6 +38,7 @@ export default function DrawerLayout() {
         drawerLabelStyle: {
           fontSize: 16,
         },
+        drawerPosition: 'right',
       }}
     >
       <Drawer.Screen

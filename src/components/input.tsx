@@ -9,7 +9,7 @@ interface InputProps extends TextInputProps {
 
 export function Input({ placeholder, icon: Icon, ...rest }: InputProps) {
   return (
-    <View className="flex-row items-center gap-3 px-6 rounded-lg border-2 border-base-dark bg-base ">
+    <View className="flex-row items-center gap-3 h-16 px-6 rounded-lg border-2 border-base-dark bg-white ">
       {Icon && <Icon width={25} height={25} color="#8E8E8E" />}
       <TextInput
         placeholder={placeholder}

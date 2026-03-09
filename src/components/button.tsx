@@ -2,6 +2,7 @@ import { useTheme } from '@/hooks/useTheme';
 import { COLORS } from '@/theme/colors';
 import { ComponentType, ReactNode } from 'react';
 import {
+  DimensionValue,
   Text as RnText,
   TouchableOpacity,
   TouchableOpacityProps,
@@ -13,17 +14,23 @@ type ButtonVariants = 'primary' | 'secondary';
 interface ButtonProps extends TouchableOpacityProps {
   children?: ReactNode;
   variant?: ButtonVariants;
+  width: DimensionValue;
 }
 
 const variants: Record<ButtonVariants, string> = {
   primary: 'bg-primary',
   secondary: 'bg-white border-2 border-primary-dark',
 };
-export function Root({ children, variant = 'primary', ...rest }: ButtonProps) {
+export function Root({
+  children,
+  variant = 'primary',
+  width,
+  ...rest
+}: ButtonProps) {
   return (
     <TouchableOpacity
       {...rest}
-      className={`${variants[variant]} flex-row rounded-lg w-72 gap-1 p-4 items-center justify-center`}
+      className={`${variants[variant]} w-[${width}] flex-row rounded-lg gap-1 p-4 items-center justify-center`}
     >
       {children}
     </TouchableOpacity>

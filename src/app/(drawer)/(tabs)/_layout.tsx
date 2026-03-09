@@ -38,6 +38,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="home"
         options={{
+          title: 'Home',
           tabBarIcon: ({ color }) => (
             <HomeIcon color={color} width={25} height={25} />
           ),
@@ -46,6 +47,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="activities"
         options={{
+          title: 'Atividades',
           tabBarIcon: ({ color }) => (
             <DumbellIcon color={color} width={25} height={25} />
           ),
@@ -54,6 +56,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="pet"
         options={{
+          title: 'Gymboo',
           tabBarIcon: ({ color }) => (
             <PetIcon color={color} width={25} height={25} />
           ),
@@ -62,6 +65,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="hydration"
         options={{
+          title: 'Hidratação',
           tabBarIcon: ({ color }) => (
             <DropIcon color={color} width={25} height={25} />
           ),
