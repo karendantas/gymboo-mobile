@@ -34,7 +34,8 @@ export const COLORS = {
     500: '#B9BC61',
   },
   neutral: {
-    100: '#F0EDE5',
+    100: '#FFFBF3',
+    200: '#F0EDE5',
     300: '#C9C3B3',
   },
   gray: {

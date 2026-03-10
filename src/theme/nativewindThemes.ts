@@ -10,6 +10,7 @@ export const nativewindThemes = {
     '--color-secondary-dark': COLORS.purple[700],
 
     '--color-base': COLORS.neutral[100],
+    '--color-base-medium': COLORS.neutral[200],
     '--color-base-dark': COLORS.neutral[300],
 
     '--color-text': COLORS.gray[700],

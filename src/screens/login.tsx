@@ -13,7 +13,9 @@ export function Login() {
 
       <View className="gap-4 mx-5 pt-6">
         <Input placeholder="Email" />
+
         <Input placeholder="Senha" icon={Lock} secureTextEntry />
+
         <Button width="100%">
           <Button.Text> Continuar </Button.Text>
         </Button>

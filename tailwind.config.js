@@ -13,6 +13,7 @@ module.exports = {
         'secondary-dark': 'var(--color-secondary-dark)',
 
         base: 'var(--color-base)',
+        'base-medium': 'var(--color-base-medium)',
         'base-dark': 'var(--color-base-dark)',
 
         text: 'var(--color-text)',
